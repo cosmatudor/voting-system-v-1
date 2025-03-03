@@ -1,0 +1,11 @@
+/Users/tudor/Desktop/Licenta/voting-system-v-1/target/debug/deps/libbip39-5ec88ec0109c1c0a.rmeta: /Users/tudor/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bip39-2.1.0/src/lib.rs /Users/tudor/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bip39-2.1.0/src/internal_macros.rs /Users/tudor/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bip39-2.1.0/src/language/mod.rs /Users/tudor/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bip39-2.1.0/src/language/english.rs /Users/tudor/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bip39-2.1.0/src/pbkdf2.rs
+
+/Users/tudor/Desktop/Licenta/voting-system-v-1/target/debug/deps/libbip39-5ec88ec0109c1c0a.rlib: /Users/tudor/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bip39-2.1.0/src/lib.rs /Users/tudor/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bip39-2.1.0/src/internal_macros.rs /Users/tudor/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bip39-2.1.0/src/language/mod.rs /Users/tudor/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bip39-2.1.0/src/language/english.rs /Users/tudor/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bip39-2.1.0/src/pbkdf2.rs
+
+/Users/tudor/Desktop/Licenta/voting-system-v-1/target/debug/deps/bip39-5ec88ec0109c1c0a.d: /Users/tudor/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bip39-2.1.0/src/lib.rs /Users/tudor/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bip39-2.1.0/src/internal_macros.rs /Users/tudor/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bip39-2.1.0/src/language/mod.rs /Users/tudor/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bip39-2.1.0/src/language/english.rs /Users/tudor/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bip39-2.1.0/src/pbkdf2.rs
+
+/Users/tudor/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bip39-2.1.0/src/lib.rs:
+/Users/tudor/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bip39-2.1.0/src/internal_macros.rs:
+/Users/tudor/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bip39-2.1.0/src/language/mod.rs:
+/Users/tudor/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bip39-2.1.0/src/language/english.rs:
+/Users/tudor/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bip39-2.1.0/src/pbkdf2.rs:

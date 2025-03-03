@@ -1,0 +1,175 @@
+{
+    "buildInfo": {
+        "rustc": {
+            "version": "1.84.0",
+            "commitHash": "9fc6b43126469e3858e2fe86cafb4f0fd5068869",
+            "commitDate": "2025-01-07",
+            "channel": "Stable",
+            "short": "rustc 1.84.0 (9fc6b4312 2025-01-07)"
+        },
+        "contractCrate": {
+            "name": "voting-system-v-1",
+            "version": "0.0.0"
+        },
+        "framework": {
+            "name": "multiversx-sc",
+            "version": "0.55.0"
+        }
+    },
+    "name": "VotingSystemV1",
+    "constructor": {
+        "inputs": [],
+        "outputs": []
+    },
+    "endpoints": [
+        {
+            "name": "createCampaign",
+            "mutability": "mutable",
+            "inputs": [
+                {
+                    "name": "num_options",
+                    "type": "u64"
+                }
+            ],
+            "outputs": []
+        },
+        {
+            "name": "vote",
+            "mutability": "mutable",
+            "inputs": [
+                {
+                    "name": "campaign",
+                    "type": "u64"
+                },
+                {
+                    "name": "option",
+                    "type": "u64"
+                }
+            ],
+            "outputs": []
+        },
+        {
+            "name": "getAllCampaigns",
+            "mutability": "readonly",
+            "inputs": [],
+            "outputs": [
+                {
+                    "type": "List<VotingCampaignView>"
+                }
+            ]
+        },
+        {
+            "name": "getVotesForCampaign",
+            "mutability": "readonly",
+            "inputs": [
+                {
+                    "name": "campaign_id",
+                    "type": "u64"
+                }
+            ],
+            "outputs": [
+                {
+                    "type": "List<Vote>"
+                }
+            ]
+        },
+        {
+            "name": "getVoteCount",
+            "mutability": "readonly",
+            "inputs": [
+                {
+                    "name": "campaign_id",
+                    "type": "u64"
+                },
+                {
+                    "name": "option",
+                    "type": "u64"
+                }
+            ],
+            "outputs": [
+                {
+                    "type": "u64"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "docs": [
+                "Events"
+            ],
+            "identifier": "createCampaignEvent",
+            "inputs": [
+                {
+                    "name": "campaign_id",
+                    "type": "u64",
+                    "indexed": true
+                },
+                {
+                    "name": "owner",
+                    "type": "Address",
+                    "indexed": true
+                },
+                {
+                    "name": "num_options",
+                    "type": "u64",
+                    "indexed": true
+                }
+            ]
+        },
+        {
+            "identifier": "voteEvent",
+            "inputs": [
+                {
+                    "name": "campaign_id",
+                    "type": "u64",
+                    "indexed": true
+                },
+                {
+                    "name": "voter",
+                    "type": "Address",
+                    "indexed": true
+                },
+                {
+                    "name": "option",
+                    "type": "u64",
+                    "indexed": true
+                }
+            ]
+        }
+    ],
+    "esdtAttributes": [],
+    "hasCallback": false,
+    "types": {
+        "Vote": {
+            "type": "struct",
+            "fields": [
+                {
+                    "name": "voter",
+                    "type": "Address"
+                },
+                {
+                    "name": "option",
+                    "type": "u64"
+                }
+            ]
+        },
+        "VotingCampaignView": {
+            "type": "struct",
+            "fields": [
+                {
+                    "name": "campaign_id",
+                    "type": "u64"
+                },
+                {
+                    "name": "owner",
+                    "type": "Address"
+                },
+                {
+                    "name": "num_options",
+                    "type": "u64"
+                }
+            ]
+        }
+    }
+}

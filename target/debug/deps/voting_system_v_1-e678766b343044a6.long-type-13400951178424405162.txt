@@ -1,0 +1,1 @@
+(u64, multiversx_sc::types::ManagedAddress<<Self as multiversx_sc::contract_base::ProxyObjBase>::Api>, u64)

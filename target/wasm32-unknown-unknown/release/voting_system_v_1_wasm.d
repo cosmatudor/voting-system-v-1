@@ -1,0 +1,1 @@
+/Users/tudor/Desktop/Licenta/voting-system-v-1/target/wasm32-unknown-unknown/release/voting_system_v_1_wasm.wasm: /Users/tudor/Desktop/Licenta/voting-system-v-1/src/storage.rs /Users/tudor/Desktop/Licenta/voting-system-v-1/src/voting_system_v_1.rs /Users/tudor/Desktop/Licenta/voting-system-v-1/wasm/src/lib.rs

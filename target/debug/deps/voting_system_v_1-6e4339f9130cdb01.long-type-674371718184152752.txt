@@ -1,0 +1,1 @@
+(u64, (multiversx_sc::types::ManagedAddress<SA>, (u64, (multiversx_sc::types::ManagedVec<SA, Vote<SA>>, (multiversx_sc::imports::MapMapper<SA, multiversx_sc::types::ManagedAddress<SA>, bool>, ())))))
