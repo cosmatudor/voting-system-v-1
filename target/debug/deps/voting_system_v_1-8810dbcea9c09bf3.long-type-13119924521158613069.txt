@@ -1,0 +1,1 @@
+(u64, (multiversx_sc::types::ManagedAddress<M>, (multiversx_sc::types::ManagedBuffer<M>, (multiversx_sc::types::ManagedBuffer<M>, (u64, (u64, (u64, (multiversx_sc::imports::VecMapper<M, multiversx_sc::types::ManagedBuffer<M>>, (bool, ())))))))))

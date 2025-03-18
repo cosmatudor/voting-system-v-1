@@ -5,20 +5,20 @@ use multiversx_sc::storage::StorageKey;
 
 #[type_abi]
 #[derive(Debug, NestedEncode, NestedDecode, TopEncode, TopDecode, Clone, ManagedVecItem)]
-pub struct Vote<M: ManagedTypeApi> {
-    pub voter: ManagedAddress<M>,
-    pub option: u64,
-}
-
 pub struct VotingCampaign<SA>
 where
     SA: StorageMapperApi,
      {
     pub campaign_id: u64,
     pub owner: ManagedAddress<SA>,
+    pub public_key: ManagedBuffer<SA>,
+    pub description: ManagedBuffer<SA>,
     pub num_options: u64,
-    pub votes: ManagedVec<SA, Vote<SA>>,
-    pub voters:  MapMapper<SA, ManagedAddress<SA>, bool>,
+    pub start_timestamp: u64,
+    pub end_timestamp: u64,
+    pub votes: ManagedVec<SA, ManagedBuffer<SA>>,
+    // pub voters:  MapMapper<SA, ManagedAddress<SA>, bool>,
+    pub is_tallied: bool,
 }
 
 impl<SA> VotingCampaign<SA>
@@ -30,7 +30,7 @@ where
         self.owner = campaign.owner;
         self.num_options = campaign.num_options;
         self.votes = campaign.votes;
-        self.voters = campaign.voters;
+        // self.voters = campaign.voters;
     }
 }
 
@@ -39,20 +39,29 @@ where
 pub struct VotingCampaignView<M: ManagedTypeApi> {
     pub campaign_id: u64,
     pub owner: ManagedAddress<M>,
+    pub description: ManagedBuffer<M>,
     pub num_options: u64,
+    pub start_timestamp: u64,
+    pub end_timestamp: u64,
+    pub is_tallied: bool,
 }
 
 impl<SA> StorageMapper<SA> for VotingCampaign<SA>
 where
     SA: StorageMapperApi,
 {
-    fn new(base_key: StorageKey<SA>) -> Self {
+    fn new(_: StorageKey<SA>) -> Self {
         VotingCampaign {
             campaign_id: 0,
             owner: ManagedAddress::default(),
+            public_key: ManagedBuffer::default(),
+            description: ManagedBuffer::default(),
             num_options: 0,
+            start_timestamp: 0,
+            end_timestamp: 0,
             votes: ManagedVec::new(),
-            voters: MapMapper::new(base_key),
+            // voters: MapMapper::new(base_key),
+            is_tallied: false,
         }
     }
 }
@@ -64,9 +73,14 @@ where
     fn clear(&mut self) {
         self.campaign_id = 0;
         self.owner = ManagedAddress::default();
+        self.public_key = ManagedBuffer::default();
+        self.description = ManagedBuffer::default();
         self.num_options = 0;
+        self.start_timestamp = 0;
+        self.end_timestamp = 0;
         self.votes.clear();
-        self.voters.clear();
+        // self.voters.clear();
+        self.is_tallied = false;
     }
 }
 
@@ -79,5 +93,5 @@ pub trait VotingStorage {
     fn num_campaigns(&self) -> SingleValueMapper<u64>;
 
     #[storage_mapper("campaigns")]
-    fn campaigns(&self, campaign_id: u64) -> VotingCampaign<Self::Api>;
+    fn campaigns(&self, campaign_id: u64) -> SingleValueMapper<VotingCampaign<Self::Api>>;
 }

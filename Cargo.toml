@@ -17,6 +17,11 @@ num-bigint = "0.4"
 [dev-dependencies.multiversx-sc-scenario]
 version = "0.55.0"
 
+[dependencies]
+fhe = "0.1.0-beta.8"
+fhe-traits = "0.1.0-beta.8"
+fhe-util = "0.1.0-beta.8"
+
 [workspace]
 members = [
     ".",
